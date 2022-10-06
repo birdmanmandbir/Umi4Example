@@ -1,6 +1,6 @@
 {
   "private": true,
-  "author":"Neil <1522674529@qq.com>",
+  "author": "Neil <1522674529@qq.com>",
   "scripts": {
     "dev": "umi dev",
     "build": "umi build",
@@ -9,6 +9,7 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "antd": "^4.23.4",
     "umi": "^4.0.24"
   },
   "devDependencies": {
