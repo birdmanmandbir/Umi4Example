@@ -4,11 +4,13 @@ specifiers:
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
   antd: ^4.23.4
+  qiankun: ^2.8.1
   typescript: ^4.1.2
   umi: ^4.0.24
 
 dependencies:
   antd: 4.23.4
+  qiankun: 2.8.1
   umi: 4.0.24_brleimwi42sgjvd2q5ndckrqka
 
 devDependencies:
@@ -4090,6 +4092,12 @@ packages:
       resolve-from: 4.0.0
     dev: false
 
+  /import-html-entry/1.14.0:
+    resolution: {integrity: sha512-CQQMV+2rxHCLMSXsajV1cjT1g6xi3ujMAPnGwR96xHaN5/JEVIOUGkM7LDRn73dk8E8NaHmOf3rvPPExPPe1xw==}
+    dependencies:
+      '@babel/runtime': 7.18.9
+    dev: false
+
   /imurmurhash/0.1.4:
     resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
@@ -5727,6 +5735,15 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
+  /qiankun/2.8.1:
+    resolution: {integrity: sha512-pPYqbwzvouwV2NgB91Xh7ZLIogyX5qgIBmUwhceUU3V6+TjnFPOGMZ7eRj7z5tDCHAzQeMb7pATPlBV5Nk2uiA==}
+    dependencies:
+      '@babel/runtime': 7.18.9
+      import-html-entry: 1.14.0
+      lodash: 4.17.21
+      single-spa: 5.9.4
+    dev: false
+
   /query-string/6.14.1:
     resolution: {integrity: sha512-XDxAeVmpfu1/6IjyT/gXHOl+S0vQ9owggJ30hhWKdHAsNPOcasn5o9BW0eejZqL2e4vMjhAxoW3jVHcD6mbcYw==}
     engines: {node: '>=6'}
@@ -6545,6 +6562,10 @@ packages:
 
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+    dev: false
+
+  /single-spa/5.9.4:
+    resolution: {integrity: sha512-QkEoh0AzGuU82qnbUUk0ydF78QbU5wMKqKKJn7uUQfBiOYlRQEfIOpLM4m23Sab+kTOLI1kbYhYeiQ7fX5KVVw==}
     dev: false
 
   /slash/3.0.0:

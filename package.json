@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "antd": "^4.23.4",
+    "qiankun": "^2.8.1",
     "umi": "^4.0.24"
   },
   "devDependencies": {
