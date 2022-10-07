@@ -36,3 +36,9 @@ model User {
   avatarUrl    String?
 }
 ```
+
+[[翻译] Prisma & MongoDB 全栈开发入门教程 - 掘金](https://juejin.cn/post/7109714480791027748#heading-9)
+
+## TODO
+
+- [ ] 尚不清楚为啥vercel部署上去接口都不通, 本地是没问题的, 云函数是正常编译, 按说加到ignore也没问题, 不过确实vercel上的云函数都没识别出来
