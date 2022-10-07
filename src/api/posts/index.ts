@@ -8,7 +8,7 @@ export default async function (req: UmiApiRequest, res: UmiApiResponse) {
     case 'GET':
       try {
         const prisma = new PrismaClient();
-        const allPosts = prisma.post.findMany({ include: { author: true } });
+        const allPosts = await prisma.post.findMany({ include: { author: true } });
         if (!Array.isArray(allPosts)) {
           return res.status(200).json([]);
         }

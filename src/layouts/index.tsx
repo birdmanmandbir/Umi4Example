@@ -9,7 +9,10 @@ export default function Layout() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/docs">Docs</Link>
+          <Link to="/posts/create">发表新文章</Link>
+        </li>
+        <li>
+          <Link to="/login">登录</Link>
         </li>
         <li>
           <a href="https://github.com/umijs/umi">Github</a>

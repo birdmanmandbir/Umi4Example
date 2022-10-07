@@ -7,7 +7,7 @@ export default async function (req: UmiApiRequest, res: UmiApiResponse) {
     case 'GET':
       try {
         const prisma = new PrismaClient();
-        const post = prisma.post.findUnique({ include: { author: true }, where: { id: req.params.postId } });
+        const post = await prisma.post.findUnique({ include: { author: true }, where: { id: req.params.postId } });
         if (post) {
           res.status(200).json(post);
         } else {
