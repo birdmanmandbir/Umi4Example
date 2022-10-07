@@ -1,10 +1,10 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { history } from 'umi';
-import { PostDto } from './models/PostDto';
+import { Post } from '@prisma/client';
 
 export default function HomePage() {
-  const [posts, setPosts] = useState<PostDto[]>();
+  const [posts, setPosts] = useState<Post[]>();
   async function refresh() {
     try {
       const res = await fetch('/api/posts');
@@ -13,7 +13,7 @@ export default function HomePage() {
       }
       setPosts(
         (await res.json()).sort(
-          (p1: PostDto, p2: PostDto) => new Date(p2.createdAt).getTime() - new Date(p1.createdAt).getTime(),
+          (p1: Post, p2: Post) => new Date(p2.createdAt).getTime() - new Date(p1.createdAt).getTime(),
         ),
       );
     } catch (err) {
