@@ -9,6 +9,9 @@ export default async function (req: UmiApiRequest, res: UmiApiResponse) {
       try {
         const prisma = new PrismaClient();
         const allPosts = prisma.post.findMany({ include: { author: true } });
+        if (!Array.isArray(allPosts)) {
+          return res.status(200).json([]);
+        }
         res.status(200).json(allPosts);
         await prisma.$disconnect();
         break;

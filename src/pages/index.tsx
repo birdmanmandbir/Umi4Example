@@ -1,20 +1,40 @@
-import yayJpg from '../assets/yay.jpg';
 import './App.css';
-import { Button } from 'antd';
+import { useEffect, useState } from 'react';
+import { history } from 'umi';
+import { PostDto } from './models/PostDto';
 
 export default function HomePage() {
+  const [posts, setPosts] = useState<PostDto[]>();
+  async function refresh() {
+    try {
+      const res = await fetch('/api/posts');
+      if (res.status !== 200) {
+        console.error(await res.text());
+      }
+      setPosts(await res.json());
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(() => {
+    refresh();
+  }, []);
+
   return (
     <div>
-      <h2>Yay! Welcome to umi!</h2>
-      <p>
-        <img src={yayJpg} width="388" />
-      </p>
-      <p>
-        To get started, edit <code>pages/index.tsx</code> and save to reload.
-      </p>
-      <p>
-        <Button>提交</Button>
-      </p>
+      {!posts && <p>Loading...</p>}
+      {posts && (
+        <div>
+          {posts.map((post) => (
+            <div key={post.id}>
+              <div onClick={() => history.push(`/posts/${post.id}`)}>
+                <p>{post.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
