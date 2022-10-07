@@ -27,14 +27,13 @@ export default async function (req: UmiApiRequest, res: UmiApiResponse) {
  
         // 把建立成功的用户数据（不包含密码）和 JWT 回传给前端
         res.status(201)
-          .setCookie('token', await signToken(user.id))
+          .setCookie('token', await signToken(parseInt(user.id)))
           .json({ ...user, passwordHash: undefined })
  
         // 处理完请求以后记得断开数据库链接 
         await prisma.$disconnect();
  
       } catch (e: any) {
- 
         // 如果发生未预期的错误，将对应的错误说明的 Prisma 文档发给用户
         res.status(500).json({
           result: false,
