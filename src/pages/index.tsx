@@ -11,7 +11,11 @@ export default function HomePage() {
       if (res.status !== 200) {
         console.error(await res.text());
       }
-      setPosts(await res.json());
+      setPosts(
+        (await res.json()).sort(
+          (p1: PostDto, p2: PostDto) => new Date(p2.createdAt).getTime() - new Date(p1.createdAt).getTime(),
+        ),
+      );
     } catch (err) {
       console.error(err);
     }
